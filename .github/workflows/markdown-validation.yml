@@ -1,0 +1,13 @@
+name: API specs continuous integration
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Markdown Linting Action
+      uses: avto-dev/markdown-lint@1.0.0
