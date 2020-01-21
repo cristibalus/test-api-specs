@@ -1,16 +1,12 @@
-name: Markdown Lint
+name: markdownlint
 
-on:
-  pull_request:
-    branches: master
-  push:
-    branches: master
+on: [push, pull_request]
 
 jobs:
-  build:
+  delivery:
     runs-on: ubuntu-latest
     steps:
-    - name: markdownlint-cli
-      uses: nosborn/github-action-markdown-cli@v1.1.1
-      with:
-        files: .
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Run mdl
+      uses: actionshub/markdownlint@master
