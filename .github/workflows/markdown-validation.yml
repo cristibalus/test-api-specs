@@ -1,4 +1,4 @@
-name: API specs continuous integration
+name: Markdown Lint
 
 on:
   pull_request:
@@ -9,5 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Markdown Linting Action
+    - name: markdownlint-cli
       uses: nosborn/github-action-markdown-cli@v1.1.1
+      with:
+        files: .
